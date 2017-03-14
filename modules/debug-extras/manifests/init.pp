@@ -1,4 +1,4 @@
-class debug-extras (
+class debug_extras (
   $path = "/vagrant/extensions/debug-extras"
 ) {
   if ! ( File['/vagrant/content'] ) {
