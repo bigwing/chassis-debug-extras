@@ -1,3 +1,3 @@
-class { 'debug-extras':
-  path => '/vagrant/extensions/debug-extras'
+class { 'debugextras':
+  path => '/vagrant/extensions/debugextras'
 }

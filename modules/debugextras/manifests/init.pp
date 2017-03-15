@@ -1,5 +1,5 @@
-class debug_extras (
-  $path = "/vagrant/extensions/debug-extras"
+class debugextras (
+  $path = "/vagrant/extensions/debugextras"
 ) {
   if ! ( File['/vagrant/content'] ) {
     file { "/vagrant/content":
@@ -24,37 +24,37 @@ class debug_extras (
   wp::plugin { 'debug-bar-shortcodes':
     ensure   => enabled,
     location => '/vagrant/wp',
-    require  => Class['wp'],
+    require  => [ Class['wp'], Wp::Plugin['debug-bar'] ],
   }
   wp::plugin { 'debug-bar-taxonomies':
     ensure   => enabled,
     location => '/vagrant/wp',
-    require  => Class['wp'],
+    require  => [ Class['wp'], Wp::Plugin['debug-bar'] ],
   }
   wp::plugin { 'debug-bar-constants':
     ensure   => enabled,
     location => '/vagrant/wp',
-    require  => Class['wp'],
+    require  => [ Class['wp'], Wp::Plugin['debug-bar'] ],
   }
   wp::plugin { 'debug-bar-plugin-activation':
     ensure   => enabled,
     location => '/vagrant/wp',
-    require  => Class['wp'],
+    require  => [ Class['wp'], Wp::Plugin['debug-bar'] ],
   }
   wp::plugin { 'debug-bar-localization':
     ensure   => enabled,
     location => '/vagrant/wp',
-    require  => Class['wp'],
+    require  => [ Class['wp'], Wp::Plugin['debug-bar'] ],
   }
   wp::plugin { 'debug-bar-post-types':
     ensure   => enabled,
     location => '/vagrant/wp',
-    require  => Class['wp'],
+    require  => [ Class['wp'], Wp::Plugin['debug-bar'] ],
   }
   wp::plugin { 'debug-bar-cache-lookup':
     ensure   => enabled,
     location => '/vagrant/wp',
-    require  => Class['wp'],
+    require  => [ Class['wp'], Wp::Plugin['debug-bar'] ],
   }
   wp::plugin { 'customizer-dev-tools':
     ensure   => enabled,
