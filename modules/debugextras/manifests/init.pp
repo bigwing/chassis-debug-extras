@@ -19,7 +19,22 @@ class debugextras (
   wp::plugin { 'user-switching':
     ensure   => enabled,
     location => '/vagrant/wp',
-    require  => Class['wp'],
+    require  => [ Class['wp'], Wp::Plugin['developer'] ],
+  }
+  wp::plugin { 'theme-check':
+    ensure   => enabled,
+    location => '/vagrant/wp',
+    require  => [ Class['wp'], Wp::Plugin['developer'] ],
+  }
+  wp::plugin { 'regenerate-thumbnails':
+    ensure   => enabled,
+    location => '/vagrant/wp',
+    require  => [ Class['wp'], Wp::Plugin['developer'] ],
+  }
+  wp::plugin { 'debug-bar-console':
+    ensure   => enabled,
+    location => '/vagrant/wp',
+    require  => [ Class['wp'], Wp::Plugin['debug-bar'] ],
   }
   wp::plugin { 'debug-bar-shortcodes':
     ensure   => enabled,
@@ -62,6 +77,11 @@ class debugextras (
     require  => Class['wp'],
   }
   wp::plugin { 'media-placeholders':
+    ensure   => enabled,
+    location => '/vagrant/wp',
+    require  => Class['wp'],
+  }
+  wp::plugin { 'php-compatibility-checker':
     ensure   => enabled,
     location => '/vagrant/wp',
     require  => Class['wp'],
