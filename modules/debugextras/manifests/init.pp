@@ -31,6 +31,11 @@ class debugextras (
     location => '/vagrant/wp',
     require  => [ Class['wp'], Wp::Plugin['developer'] ],
   }
+  wp::plugin { 'debug-bar':
+    ensure   => enabled,
+    location => '/vagrant/wp',
+    require  => Class['wp'],
+  }
   wp::plugin { 'debug-bar-console':
     ensure   => enabled,
     location => '/vagrant/wp',
